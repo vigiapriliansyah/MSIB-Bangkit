@@ -3,17 +3,157 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title></title>
+    <title>Tugas Akhir Membnuat Website</title>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
+
     <link href="css/style.css" rel="stylesheet" />
   </head>
   <body>
     <header>
-      <nav></nav>
+      <nav class="navbar">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">
+            <img src="img/gambar1.png" alt="icon" width="55" height="43" />
+          </a>
+          <div class="burger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <ul class="navbar-nav">
+            <li><a href="#" class="nav-link">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+            <li><a href="#login" class="nav-link">Login</a></li>
+          </ul>
+        </div>
+      </nav>
     </header>
+
     <main>
-      <div class="content">
-        <article id="profile" class="card"></article>
+      <section class="hero">
+        <div class="container-article">
+          <h1 class="title">Vigi Apriliansyah</h1>
+          <article class="subheader">
+            <h2>
+              Mahasiswa yang sedang mengeksplorasi dunia teknologi dan
+              pengembangan web.
+            </h2>
+          </article>
+          <a href="#about" class="btn-about">About Me</a>
+        </div>
+      </section>
+
+      <div id="about" class="about-section">
+        <div class="container-about">
+          <h2>About Me</h2>
+          <img src="img/myfoto.jpg" alt="Vigi Apriliansyah" class="myfoto" />
+          <article>
+            <p>
+              Halo, saya Vigi Apriliansyah. Saya seorang mahasiswa yang tertarik
+              dengan dunia teknologi, khususnya pengembangan web dan eksplorasi
+              teknologi terbaru. Saya terus belajar untuk meningkatkan
+              keterampilan saya di berbagai bidang, termasuk pemrograman dan
+              desain web.
+            </p>
+          </article>
+        </div>
       </div>
+
+      <section id="contact" class="contact-section">
+        <div class="container-contact">
+          <h2>Contact</h2>
+          <p>
+            Hubungi saya di platform sosial media atau melalui email di
+            <a href="mailto:apriliansyahvigi5@gmail.com"
+              >apriliansyahvigi5@gmail.com</a
+            >.
+          </p>
+        </div>
+      </section>
+
+      <div id="login" class="login-section">
+        <div class="container-login">
+          <h2 class="login-title">Login</h2>
+          <p class="login-description">Masuk ke akun Anda.</p>
+          <form class="login-form">
+            <div class="input-group">
+              <input
+                type="text"
+                class="input-field"
+                name="username"
+                placeholder="Username"
+                required
+              />
+            </div>
+            <div class="input-group">
+              <input
+                type="password"
+                class="input-field"
+                name="password"
+                placeholder="Password"
+                required
+              />
+            </div>
+            <div class="remember-me-group">
+              <input
+                type="checkbox"
+                class="remember-me-checkbox"
+                id="rememberMe"
+              />
+              <label for="rememberMe" class="remember-me-label"
+                >Remember me</label
+              >
+            </div>
+            <div class="submit-group">
+              <button class="submit-btn" type="submit">Login</button>
+            </div>
+            <div class="footer-text">
+              <span>2024 - Vigi Apriliansyah</span>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <aside>
+        <div class="social-media">
+          <ul>
+            <li>
+              <a href="#"><img src="img/discord.png" alt="Discord" /></a>
+            </li>
+            <li>
+              <a href="#"><img src="img/facebook.png" alt="Facebook" /></a>
+            </li>
+            <li>
+              <a href="#"><img src="img/instagram.png" alt="Instagram" /></a>
+            </li>
+            <li>
+              <a href="#"><img src="img/whatsapp.png" alt="WhatsApp" /></a>
+            </li>
+          </ul>
+        </div>
+      </aside>
     </main>
+
+    <footer id="footer">
+      <div class="container-footer">
+        <div class="copyright">
+          &copy; Copyright <strong><span>Vigi</span></strong
+          >. All Rights Reserved
+        </div>
+      </div>
+    </footer>
+    <script>
+      const burgerMenu = document.querySelector(".burger-menu");
+      const navbarNav = document.querySelector(".navbar-nav");
+
+      burgerMenu.addEventListener("click", () => {
+        navbarNav.classList.toggle("active");
+      });
+    </script>
   </body>
 </html>
