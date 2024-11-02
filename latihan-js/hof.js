@@ -17,34 +17,58 @@
 // console.log("With discount 25%: ", withDiscount);
 
 //memouze
-function memoize(fn) {
-  const cache = new Map();
+// function memoize(fn) {
+//   const cache = new Map();
+//
+//   return function (...args) {
+//     const key = JSON.stringify(args);
+//
+//     if (cache.has(key)) {
+//       return cache.get(key);
+//     }
+//     const result = fn(...args);
+//     cache.set(key, result);
+//
+//     return result;
+//   };
+// }
+//
+// function sumArray(arr) {
+//   if (arr.length === 0) return 0;
+//   return arr[0] + sumArray(arr.slice(1));
+// }
+//
+// const memoizedSumArray = memoize(sumArray);
+// const largeArray = Array.from({ length: 500 }, (_, i) => i + 1);
+//
+// console.time("Memoize Sum First Call");
+// console.log("Total: ", memoizedSumArray(largeArray));
+// console.timeEnd("Memoize Sum First Call");
+//
+// console.time("Memoized Sum Second Call (Cached)");
+// console.log("Total:", memoizedSumArray(largeArray));
+// console.timeEnd("Memoized Sum Second Call (Cached)");
+//
 
-  return function (...args) {
-    const key = JSON.stringify(args);
-
-    if (cache.has(key)) {
-      return cache.get(key);
-    }
-    const result = fn(...args);
-    cache.set(key, result);
-
-    return result;
+//currying pada fungsi adjectivfy dan multipleBy
+function adjectivfy(adjective) {
+  return function (noun) {
+    return `${noun} ${adjective}`;
   };
 }
 
-function sumArray(arr) {
-  if (arr.length === 0) return 0;
-  return arr[0] + sumArray(arr.slice(1));
+function multipleBy(x) {
+  return function (y) {
+    return x * y;
+  };
 }
 
-const memoizedSumArray = memoize(sumArray);
-const largeArray = Array.from({ length: 500 }, (_, i) => i + 1);
+const coolifier = adjectivfy("keren");
+const funnifier = adjectivfy("seru");
 
-console.time("Memoize Sum First Call");
-console.log("Total: ", memoizedSumArray(largeArray));
-console.timeEnd("Memoize Sum First Call");
+const multipleByFive = multipleBy(5);
 
-console.time("Memoized Sum Second Call (Cached)");
-console.log("Total:", memoizedSumArray(largeArray));
-console.timeEnd("Memoized Sum Second Call (Cached)");
+console.log(coolifier("Vigi"));
+console.log(funnifier("Javascript"));
+console.log(multipleByFive(7));
+console.log(multipleByFive(10));
